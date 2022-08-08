@@ -1,5 +1,5 @@
 package: staff 
-version: '1.0.0-dev'
+version: '1.0.0-beta1'
 author: 'Alexander Walther' 
 supportpage: https://github.com/alexplusde/staff 
 
@@ -13,23 +13,25 @@ requires:
 
 page:
     title: translate:staff_title
+    prio: 100
     icon: rex-icon fa-person
-
-pages:
-    edit: 
-        title: translate:staff_title
-        block: system               
-        prio: 15
-        icon: rex-icon fa-person
-        perm: staff[]
-    settings:
-        title: translate:staff_settings
-        icon: rex-icon fa-gear
-        itemclass: pull-right
-        perm: admin
-    docs:
-        title: translate:staff_docs
-        subPath: README.md  # Gibt anstelle einer Seite unter `pages` die README.md des Addons aus
-        icon: rex-icon fa-info-circle
-        itemclass: pull-right
-        perm: staff[docs]
+    perm: staff[]
+    subpages:
+        edit: 
+            title: translate:staff_title
+            icon: rex-icon fa-person
+            perm: staff[]
+            subPath: pages/data_edit.php
+            itemattr:
+                table_name: rex_staff
+        settings:
+            title: translate:staff_settings
+            icon: rex-icon fa-gear
+            itemclass: pull-right
+            perm: admin
+        docs:
+            title: translate:staff_docs
+            subPath: README.md  # Gibt anstelle einer Seite unter `pages` die README.md des Addons aus
+            icon: rex-icon fa-info-circle
+            itemclass: pull-right
+            perm: staff[docs]
