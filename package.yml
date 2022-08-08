@@ -28,7 +28,6 @@ pages:
                 title: translate:staff_title
                 icon: rex-icon fa-person
                 perm: staff[]
-                subPath: pages/data_edit.php
                 itemattr:
                     table_name: rex_staff
             settings:
