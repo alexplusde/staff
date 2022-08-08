@@ -8,4 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'chillerlan\\Settings\\' => array($vendorDir . '/chillerlan/php-settings-container/src'),
     'chillerlan\\QRCode\\' => array($vendorDir . '/chillerlan/php-qrcode/src'),
+    'JeroenDesloovere\\VCard\\' => array($vendorDir . '/jeroendesloovere/vcard/src'),
+    'Behat\\Transliterator\\' => array($vendorDir . '/behat/transliterator/src/Behat/Transliterator'),
 );
