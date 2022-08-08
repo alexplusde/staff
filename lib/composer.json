@@ -1,6 +1,6 @@
 {
     "require": {
-        "jeroendesloovere/vcard": "^1.7"
+        "jeroendesloovere/vcard": "^1.7",
         "chillerlan/php-qrcode": "^4.3"
     }
 }
