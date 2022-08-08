@@ -9,12 +9,12 @@ staff_table_company = Unternehmen
 staff_table_cellphone = Mobiltelefon
 staff_table_phone_home = Festnetz (privat)
 staff_table_email_home = E-Mail (privat)
+staff_table_phone_work = Festnetz (Arbeit)
 staff_table_email_work = E-Mail (Arbeit)
 staff_table_url = Website
-
 
 staff_info_donate = Anders als die meisten Addons aus der REDAXO-Community ist die Entstehung und Weiterentwicklung dieses Addons nicht durch eigene Projekte gedeckt. Mit einer Spende oder einer Beauftragung sicherst du zusätzliche Features, die Stabilität, Funktionsumfang und Weiterentwicklung weiter verbessern können, sowie eine bessere Anleitung. 
 staff_donate = Weiterentwicklung unterstützen 
 
 staff_settings = Einstellungen
-staff_help = Hilfe
+staff_docs = Hilfe
