@@ -55,14 +55,26 @@ class staff extends \rex_yform_manager_dataset
     }
     public function getTelCell()
     {
-        return $this->getValue('cell_phone');
+        return self::normalizePhone($this->getValue('telephone'));
     }
     public function getTelWork()
     {
-        return $this->getValue('telephone_work');
+        return self::normalizePhone($this->getValue('telephone_work'));
     }
     public function getTelHome()
     {
-        return $this->getValue('telephone_work');
+        return self::normalizePhone($this->getValue('telephone_home'));
+    }
+    
+    public static function normalizePhone($phone)
+    {
+        $phone =  preg_replace('~[^\d\+]~', '', $phone);
+        if (substr($phone, 0, 2) == "00") {
+            $phone = "+". ltrim($phone, '00');
+        }
+        if (substr($phone, 0, 2) == "0") {
+            $phone = "+49". ltrim($phone, '0');
+        }
+        return $phone;
     }
 }
