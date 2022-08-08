@@ -3,7 +3,7 @@
 
 $currentPage = rex_be_controller::getCurrentPageObject();
 $wrapper = '';
-if ($table_name = $currentPage->getItemAttr('table_name', '')) {
+if ($table_name = "rex_staff") {
     if (!rex_request('table_name', 'string', '')) {
         $_REQUEST['table_name'] = $table_name;
     }
