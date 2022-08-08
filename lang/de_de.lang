@@ -1,1 +1,12 @@
-staff_title: Mitarbeitende
+staff_title = Mitarbeitende
+
+staff_table_fieldset_about = Über die Person
+staff_table_fieldset_vcard = Visitenkarte
+
+staff_table_firstname = Vorname
+staff_table_lastname = Nachname
+staff_table_company = Unternehmen
+staff_table_cellphone = Mobiltelefon
+staff_table_phone_home = Festnetz (privat)
+staff_table_email_home = E-Mail (privat)
+staff_table_email_work = E-Mail (Arbeit)
