@@ -31,7 +31,7 @@ class staff extends \rex_yform_manager_dataset
     }
     public function getTitle()
     {
-        return $this->getValue('firstname');
+        return $this->getValue('title');
     }
     public function getCompany()
     {
@@ -39,11 +39,11 @@ class staff extends \rex_yform_manager_dataset
     }
     public function getEmailWork()
     {
-        return $this->getValue('email-work');
+        return $this->getValue('email_work');
     }
     public function getEmailHome()
     {
-        return $this->getValue('email-work');
+        return $this->getValue('email_home');
     }
     public function getStreet()
     {
@@ -55,15 +55,15 @@ class staff extends \rex_yform_manager_dataset
     }
     public function getTelCell()
     {
-        return self::normalizePhone($this->getValue('telephone'));
+        return self::normalizePhone($this->getValue('phone'));
     }
     public function getTelWork()
     {
-        return self::normalizePhone($this->getValue('telephone_work'));
+        return self::normalizePhone($this->getValue('phone_work'));
     }
     public function getTelHome()
     {
-        return self::normalizePhone($this->getValue('telephone_home'));
+        return self::normalizePhone($this->getValue('phone_home'));
     }
     
     public static function normalizePhone($phone)
