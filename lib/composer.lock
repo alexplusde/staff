@@ -1,0 +1,121 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "b425c935a2bcf9ed17669f604fe1cbe4",
+    "packages": [
+        {
+            "name": "behat/transliterator",
+            "version": "v1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/Transliterator.git",
+                "reference": "baac5873bac3749887d28ab68e2f74db3a4408af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/baac5873bac3749887d28ab68e2f74db3a4408af",
+                "reference": "baac5873bac3749887d28ab68e2f74db3a4408af",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "chuyskywalker/rolling-curl": "^3.1",
+                "php-yaoi/php-yaoi": "^1.0",
+                "phpunit/phpunit": "^8.5.25 || ^9.5.19"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Behat\\Transliterator\\": "src/Behat/Transliterator"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Artistic-1.0"
+            ],
+            "description": "String transliterator",
+            "keywords": [
+                "i18n",
+                "slug",
+                "transliterator"
+            ],
+            "support": {
+                "issues": "https://github.com/Behat/Transliterator/issues",
+                "source": "https://github.com/Behat/Transliterator/tree/v1.5.0"
+            },
+            "time": "2022-03-30T09:27:43+00:00"
+        },
+        {
+            "name": "jeroendesloovere/vcard",
+            "version": "v1.7.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeroendesloovere/vcard.git",
+                "reference": "2b8b6190c613d368b8cb6552e59cf6e6e7d0aea9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeroendesloovere/vcard/zipball/2b8b6190c613d368b8cb6552e59cf6e6e7d0aea9",
+                "reference": "2b8b6190c613d368b8cb6552e59cf6e6e7d0aea9",
+                "shasum": ""
+            },
+            "require": {
+                "behat/transliterator": "~1.0",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.6.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JeroenDesloovere\\VCard\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeroen Desloovere",
+                    "email": "info@jeroendesloovere.be",
+                    "homepage": "http://jeroendesloovere.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This VCard PHP class can generate a vCard with some data. When using an iOS device it will export as a .ics file because iOS devices don't support the default .vcf files.",
+            "homepage": "https://github.com/jeroendesloovere/vcard",
+            "keywords": [
+                ".vcf",
+                "generator",
+                "php",
+                "vCard"
+            ],
+            "support": {
+                "issues": "https://github.com/jeroendesloovere/vcard/issues",
+                "source": "https://github.com/jeroendesloovere/vcard/tree/v1.7.3"
+            },
+            "time": "2021-11-24T20:21:20+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}
