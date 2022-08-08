@@ -18,7 +18,29 @@ class staff extends \rex_yform_manager_dataset
         $replace["%tel-work%"] = $staff->getPhoneWork();
         $replace["%email-home%"] = $staff->getMailHome();
         $replace["%email-work%"] = $staff->getMailWork();
+        $replace["%url%"] = $staff->getUrl();
         return (new QRCode)->render(str_replace($find, $replace, $fragment));
+    }
+
+    public static function getVcf($staff)
+    {
+        // https://github.com/jeroendesloovere/vcard
+        $vcard = new VCard();
+
+        // add personal data
+        $vcard->addName($staff->getLastName(), $staff->getFirstName(), "", $staff->getTitle(), "");
+
+        $vcard->addCompany($staff->getCompany());
+        // $vcard->addJobtitle();
+        // $vcard->addRole();
+        $vcard->addEmail();
+        $vcard->addPhoneNumber($staff->getPhoneWork(), 'PREF;WORK');
+        $vcard->addAddress(null, null, 'street', 'worktown', null, 'workpostcode', 'Belgium');
+        $vcard->addURL($staff->getUrl());
+
+        // $vcard->addPhoto(__DIR__ . '/landscape.jpeg');
+
+        return $vcard->getOutput();
     }
 
     public function getFirstName()
@@ -52,6 +74,10 @@ class staff extends \rex_yform_manager_dataset
     public function getCountry()
     {
         return $this->getValue('country');
+    }
+    public function getUrl()
+    {
+        return $this->getValue('url');
     }
     public function getTelCell()
     {
