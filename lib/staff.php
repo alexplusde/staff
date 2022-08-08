@@ -2,7 +2,7 @@
 
 class staff extends \rex_yform_manager_dataset
 {
-    public static function getQR($staff)
+    public static function getQRCode($staff)
     {
         $replace = [];
         $replace["%firstname%"] = $staff->getFirstName();
@@ -13,16 +13,18 @@ class staff extends \rex_yform_manager_dataset
         $replace["%zip%"] = $staff->getZip();
         $replace["%city%"] = $staff->getCity();
         $replace["%country%"] = $staff->getCountry();
-        $replace["%tel-cell%"] = $staff->getPhoneMobile();
+        $replace["%tel-cell%"] = $staff->getPhoneCell();
         $replace["%tel-home%"] = $staff->getPhoneHome();
         $replace["%tel-work%"] = $staff->getPhoneWork();
         $replace["%email-home%"] = $staff->getMailHome();
         $replace["%email-work%"] = $staff->getMailWork();
         $replace["%url%"] = $staff->getUrl();
-        return (new QRCode)->render(str_replace($find, $replace, $fragment));
+        $fragment = new rex_fragment();
+
+        return (new QRCode)->render(str_replace(array_keys($replace), array_values($replace), $fragment->parse('staff/qr-vcard.php')));
     }
 
-    public static function getVcf($staff)
+    public static function getVCard($staff)
     {
         // https://github.com/jeroendesloovere/vcard
         $vcard = new VCard();
@@ -79,15 +81,15 @@ class staff extends \rex_yform_manager_dataset
     {
         return $this->getValue('url');
     }
-    public function getTelCell()
+    public function getPhoneCell()
     {
         return self::normalizePhone($this->getValue('phone'));
     }
-    public function getTelWork()
+    public function getPhoneWork()
     {
         return self::normalizePhone($this->getValue('phone_work'));
     }
-    public function getTelHome()
+    public function getPhoneHome()
     {
         return self::normalizePhone($this->getValue('phone_home'));
     }

@@ -9,7 +9,56 @@ Staff basiert vollkommen auf YForm. Nutze alle Vorteile, die YForm bietet mit de
 `staff:get($id)` - erhalte einen bestimmten Mitarbeitenden anhand der Datensatz-ID
 `staff::query()->findAll()` erhalte eine Array aller Mitarbeitenden.
 
-Alle weiteren Methoden leiten sich von YOrms Dataset-Methode ab.
+### Weitere Methoden für den Datensatz
+
+```php
+$person = staff::get($id);
+
+// Angaben zur Person, bspw. für eine Team-Seite
+echo $person->getName();
+echo $person->getDescription(); // z.B. Vita
+echo $person->getImage(); // Medienpool-Dateiname
+
+// Visitenkarte
+echo $person->getTitle(); // z.B. `Dr.`
+echo $person->getFirstName();
+echo $person->getLastName();
+
+echo $person->getCompany();
+
+echo $person->getStreet();
+echo $person->getZip();
+echo $person->getCity();
+echo $person->getCountry();
+
+echo $person->getMailWork();
+echo $person->getMailHome();
+echo $person->getUrl(); // z.B: Unternehmenswebsite
+
+echo $person->getPhone();
+echo $person->getPhoneWork();
+echo $person->getPhoneMail();
+```
+
+### Visitenkarte als VCard-Datei
+
+```php
+echo staff::getQRCode(staff::get($id));
+```
+
+Weitere Informationen beim Vendor https://github.com/jeroendesloovere/vcard
+
+### Visitenkarte als QR-Code 
+
+```php
+echo staff::getVCard(staff::get($id));
+```
+
+Weitere Informationen beim Vendor https://github.com/chillerlan/php-qrcode
+
+### Weitere YOrm-Methoden
+
+Alle weiteren Dataset-Methoden leiten sich von YOrm in YForm ab.
 
 ## Lizenz
 
