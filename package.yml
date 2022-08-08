@@ -14,19 +14,19 @@ requires:
 page:
     title: translate:staff_title
     prio: 100
-    icon: rex-icon fa-person
+    icon: rex-icon fa-user
     perm: staff[]
 
 pages:
     staff:
         title: translate:staff_title
         prio: 100
-        icon: rex-icon fa-person
+        icon: rex-icon fa-user
         perm: staff[]
         subpages:
             edit: 
                 title: translate:staff_title
-                icon: rex-icon fa-person
+                icon: rex-icon fa-user
                 perm: staff[]
                 itemattr:
                     table_name: rex_staff
@@ -41,3 +41,6 @@ pages:
                 icon: rex-icon fa-info-circle
                 itemclass: pull-right
                 perm: staff[docs]
+
+default_config:
+    editor: 'class="form-control cke5-editor" data-lang="de" data-profile="default"'
