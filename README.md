@@ -45,7 +45,7 @@ echo $person->getPhoneWork();
 echo $person->getPhoneMail();
 ```
 
-### Visitenkarte als VCard-Datei
+### Visitenkarte als QR-Code 
 
 ```php
 echo '<img src="'.staff::getQRCode($person).'">"';
@@ -53,7 +53,7 @@ echo '<img src="'.staff::getQRCode($person).'">"';
 
 Weitere Informationen beim Vendor https://github.com/jeroendesloovere/vcard
 
-### Visitenkarte als QR-Code 
+### Visitenkarte als VCard-Datei
 
 ```php
 $person = staff::get($id);
