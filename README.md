@@ -56,7 +56,8 @@ Weitere Informationen beim Vendor https://github.com/jeroendesloovere/vcard
 ### Visitenkarte als QR-Code 
 
 ```php
-echo staff::getVCard(staff::get($id));
+$person = staff::get($id);
+echo staff::getVCard($person);
 ```
 
 Weitere Informationen beim Vendor https://github.com/chillerlan/php-qrcode
