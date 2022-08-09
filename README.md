@@ -51,7 +51,7 @@ echo $person->getPhoneMail();
 echo '<img src="'.staff::getQRCode($person).'">"';
 ```
 
-Weitere Informationen beim Vendor https://github.com/jeroendesloovere/vcard
+Weitere Informationen beim Vendor https://github.com/chillerlan/php-qrcode
 
 ### Visitenkarte als VCard-Datei
 
@@ -60,7 +60,7 @@ $person = staff::get($id);
 echo staff::getVCard($person);
 ```
 
-Weitere Informationen beim Vendor https://github.com/chillerlan/php-qrcode
+Weitere Informationen beim Vendor https://github.com/jeroendesloovere/vcard
 
 ### Weitere YOrm-Methoden
 
