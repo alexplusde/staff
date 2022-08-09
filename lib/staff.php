@@ -33,6 +33,18 @@ class staff extends \rex_yform_manager_dataset
         return $vcard->getOutput();
     }
 
+    public function getName()
+    {
+        return $this->getValue('fullname');
+    }
+    public function getDescription()
+    {
+        return $this->getValue('description');
+    }
+    public function getContent()
+    {
+        return $this->getValue('content');
+    }
     public function getFirstName()
     {
         return $this->getValue('firstname');

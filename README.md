@@ -20,7 +20,8 @@ $person = staff::get($id);
 
 // Angaben zur Person, bspw. für eine Team-Seite
 echo $person->getName();
-echo $person->getDescription(); // z.B. Vita
+echo $person->getDescription(); // z.B. Kurzbeschreibung
+echo $person->getContent(); // z.B. Vita
 echo $person->getImage(); // Medienpool-Dateiname
 
 // Visitenkarte
@@ -47,7 +48,7 @@ echo $person->getPhoneMail();
 ### Visitenkarte als VCard-Datei
 
 ```php
-echo staff::getQRCode(staff::get($id));
+echo '<img src="'.staff::getQRCode($person).'">"';
 ```
 
 Weitere Informationen beim Vendor https://github.com/jeroendesloovere/vcard
