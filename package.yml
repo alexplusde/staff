@@ -1,5 +1,5 @@
 package: staff 
-version: '1.0.4'
+version: '1.1.0'
 author: 'Alexander Walther' 
 supportpage: https://github.com/alexplusde/staff 
 
@@ -30,7 +30,7 @@ pages:
         perm: admin
     docs:
         title: translate:staff_docs
-        subPath: README.md  # Gibt anstelle einer Seite unter `pages` die README.md des Addons aus
+        subPath: README.md 
         icon: rex-icon fa-info-circle
         itemclass: pull-right
         perm: staff[docs]

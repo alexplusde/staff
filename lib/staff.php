@@ -1,27 +1,15 @@
 <?php
 
+use JeroenDesloovere\VCard\VCard;
+use chillerlan\QRCode\QRCode;
+use chillerlan\QRCode\QROptions;
+
 class staff extends \rex_yform_manager_dataset
 {
-    public static function getQRCode($staff)
+    public static function getQRCode($staff, $options = null)
     {
-        $replace = [];
-        $replace["%firstname%"] = $staff->getFirstName();
-        $replace["%lastname%"] = $staff->getLastName();
-        $replace["%title%"] = $staff->getTitle();
-        $replace["%company%"] = $staff->getCompany();
-        $replace["%street%"] = $staff->getStreet();
-        $replace["%zip%"] = $staff->getZip();
-        $replace["%city%"] = $staff->getCity();
-        $replace["%country%"] = $staff->getCountry();
-        $replace["%tel-cell%"] = $staff->getPhoneCell();
-        $replace["%tel-home%"] = $staff->getPhoneHome();
-        $replace["%tel-work%"] = $staff->getPhoneWork();
-        $replace["%email-home%"] = $staff->getMailHome();
-        $replace["%email-work%"] = $staff->getMailWork();
-        $replace["%url%"] = $staff->getUrl();
-        $fragment = new rex_fragment();
-
-        return (new QRCode)->render(str_replace(array_keys($replace), array_values($replace), $fragment->parse('staff/qr-vcard.php')));
+        $qrcode = new QRCode($options);
+        return $qrcode->render(staff::getVCard($staff));
     }
 
     public static function getVCard($staff)
@@ -35,9 +23,9 @@ class staff extends \rex_yform_manager_dataset
         $vcard->addCompany($staff->getCompany());
         // $vcard->addJobtitle();
         // $vcard->addRole();
-        $vcard->addEmail();
+        $vcard->addEmail($staff->getMailWork());
         $vcard->addPhoneNumber($staff->getPhoneWork(), 'PREF;WORK');
-        $vcard->addAddress(null, null, 'street', 'worktown', null, 'workpostcode', 'Belgium');
+        $vcard->addAddress(null, null, $staff->getStreet(), $staff->getCity(), null, $staff->getZip(), $staff->getCountry());
         $vcard->addURL($staff->getUrl());
 
         // $vcard->addPhoto(__DIR__ . '/landscape.jpeg');
@@ -61,17 +49,25 @@ class staff extends \rex_yform_manager_dataset
     {
         return $this->getValue('company');
     }
-    public function getEmailWork()
+    public function getMailWork()
     {
         return $this->getValue('email_work');
     }
-    public function getEmailHome()
+    public function getMailHome()
     {
         return $this->getValue('email_home');
     }
     public function getStreet()
     {
         return $this->getValue('street');
+    }
+    public function getCity()
+    {
+        return $this->getValue('city');
+    }
+    public function getZip()
+    {
+        return $this->getValue('zip');
     }
     public function getCountry()
     {

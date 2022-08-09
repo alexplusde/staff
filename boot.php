@@ -1,6 +1,4 @@
 <?php
-$addon = rex_addon::get('staff');
-require_once $addon->getPath('vendor/'.'autoload.php');
 
 if (rex_addon::get('yform')->isAvailable() && !rex::isSafeMode()) {
     rex_yform_manager_dataset::setModelClass(
