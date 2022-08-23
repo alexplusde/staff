@@ -8,6 +8,14 @@ $field = $form->addInputField('text', 'editor', null, ['class' => 'form-control'
 $field->setLabel(rex_i18n::msg('staff_editor'));
 $field->setNotice('z.B. <code>class="form-control cke5-editor" data-lang="de" data-profile="default"</code>');
 
+$field = $form->addInputField('text', 'editor', null, ['class' => 'form-control']);
+$field->setLabel(rex_i18n::msg('default_company_name'));
+$field->setNotice('optional: Standard-Unternehmens-Name, wenn nicht beim Mitarbeitenden ausgefüllt.');
+
+$field = $form->addInputField('text', 'editor', null, ['class' => 'form-control']);
+$field->setLabel(rex_i18n::msg('default_company_url'));
+$field->setNotice('optional: Standard-Unternehmens-Website, wenn nicht beim Mitarbeitenden ausgefüllt.');
+
 $fragment = new rex_fragment();
 $fragment->setVar('class', 'edit', false);
 $fragment->setVar('title', $addon->i18n('staff_settings'), false);

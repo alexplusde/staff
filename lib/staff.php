@@ -59,6 +59,9 @@ class staff extends \rex_yform_manager_dataset
     }
     public function getCompany()
     {
+        if ($this->getValue('company') == "") {
+            return rex_config::get("staff", "default_company_name");
+        }
         return $this->getValue('company');
     }
     public function getMailWork()
@@ -88,6 +91,9 @@ class staff extends \rex_yform_manager_dataset
     public function getUrl()
     {
         return $this->getValue('url');
+        if ($this->getValue('company') == "") {
+            return rex_config::get("staff", "default_company_url");
+        }
     }
     public function getPhoneCell()
     {
