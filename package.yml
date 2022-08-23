@@ -1,5 +1,5 @@
 package: staff 
-version: '1.1.0'
+version: '1.2.0'
 author: 'Alexander Walther' 
 supportpage: https://github.com/alexplusde/staff 
 
@@ -23,6 +23,12 @@ pages:
         perm: staff[]
         itemattr:
             table_name: rex_staff
+    edit-category: 
+        title: translate:staff_category_title
+        icon: rex-icon fa-folder
+        perm: staff[]
+        itemattr:
+            table_name: rex_staff_category
     settings:
         title: translate:staff_settings
         icon: rex-icon fa-gear
