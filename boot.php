@@ -7,7 +7,7 @@ if (rex_addon::get('yform')->isAvailable() && !rex::isSafeMode()) {
     );
 }
 
-if (rex::isBackend() && rex_be_controller::getCurrentPage() == "staff/edit") {
+if (rex::isBackend() && rex_be_controller::getCurrentPage() == "staff/edit" || rex_be_controller::getCurrentPage() == "yform/manager/data_edit") {
     rex_extension::register('OUTPUT_FILTER', function (rex_extension_point $ep) {
         $suchmuster = 'class="###staff-settings-editor###"';
         $ersetzen = rex_config::get("staff", "editor");
