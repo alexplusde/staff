@@ -11,7 +11,20 @@ staff_table_phone_home = Festnetz (privat)
 staff_table_email_home = E-Mail (privat)
 staff_table_phone_work = Festnetz (Arbeit)
 staff_table_email_work = E-Mail (Arbeit)
-staff_table_url = Website
+staff_website = Website
+
+staff_category = Kategorie
+staff_categories = Kategorien
+staff_description = Beschreibung
+staff_cv = Lebenslauf
+staff_image = Bild
+staff_status = Veröffentlicht?
+staff_status_offline = Offline
+staff_status_online = Veröffentlicht
+
+staff_createdate = Created on...
+staff_updatedate = Last modified on...
+staff_prio = Order
 
 staff_info_donate = Anders als die meisten Addons aus der REDAXO-Community ist die Entstehung und Weiterentwicklung dieses Addons nicht durch eigene Projekte gedeckt. Mit einer Spende oder einer Beauftragung sicherst du zusätzliche Features, die Stabilität, Funktionsumfang und Weiterentwicklung weiter verbessern können, sowie eine bessere Anleitung. 
 staff_donate = Weiterentwicklung unterstützen 

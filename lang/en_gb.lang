@@ -1,0 +1,37 @@
+staff_title = Employees
+
+staff_table_fieldset_about = About the Employee
+staff_table_fieldset_vcard = Business Card
+
+staff_table_firstname = First name
+staff_table_lastname = Last name
+staff_table_company = Company
+staff_table_cellphone = Mobile
+staff_table_phone_home = Phone (personal)
+staff_table_email_home = Email (personal)
+staff_table_phone_work = Phone (work)
+staff_table_email_work = Email (work)
+staff_website = Website
+
+staff_categories = Categories
+staff_category = Category
+staff_description = Description
+staff_cv = Curriculum vitae
+staff_image = Image
+staff_status = Published?
+staff_status_offline = Offline
+staff_status_online = Published
+
+staff_createdate = Erstellt am...
+staff_updatedate = Zuletzt geändert am...
+staff_prio = Reihenfolge
+
+staff_info_donate = Anders als die meisten Addons aus der REDAXO-Community ist die Entstehung und Weiterentwicklung dieses Addons nicht durch eigene Projekte gedeckt. Mit einer Spende oder einer Beauftragung sicherst du zusätzliche Features, die Stabilität, Funktionsumfang und Weiterentwicklung weiter verbessern können, sowie eine bessere Anleitung. 
+staff_donate = Support further development 
+
+staff_settings = Settings
+staff_docs = Help
+
+staff_editor = WYSIWYG-Editor
+
+staff_category_title = Categories
