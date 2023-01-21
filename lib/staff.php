@@ -51,7 +51,7 @@ class staff extends \rex_yform_manager_dataset
     }
     public function getLastName()
     {
-        return $this->getValue('firstname');
+        return $this->getValue('lastname');
     }
     public function getTitle()
     {
