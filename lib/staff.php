@@ -107,6 +107,10 @@ class staff extends \rex_yform_manager_dataset
     {
         return self::normalizePhone($this->getValue('phone_home'));
     }
+    public function getImage()
+    {
+        return $this->getValue('image');
+    }
     
     public static function normalizePhone($phone)
     {
