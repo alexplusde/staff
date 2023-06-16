@@ -19,7 +19,7 @@ jobs:
         steps:
             -   uses: actions/checkout@v3
                 with:
-                    token: ${{ secrets.php-cs-fixer-action }}
+                    token: ${{ php-cs-fixer-action }}
 
             -   name: Setup PHP
                 uses: shivammathur/setup-php@v2
