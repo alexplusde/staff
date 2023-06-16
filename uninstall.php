@@ -1,3 +1,3 @@
 <?php
 
-rex_config::removeNamespace("staff");
+rex_config::removeNamespace('staff');
