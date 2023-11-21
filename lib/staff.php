@@ -31,6 +31,7 @@ class staff extends \rex_yform_manager_dataset
 
         return $vcard->getOutput();
     }
+
     public function getName(): string
     {
         return $this->getValue('fullname');
@@ -58,7 +59,7 @@ class staff extends \rex_yform_manager_dataset
 
     public function getFullName(): string
     {
-        if($this->getFirstname() == "") {
+        if ('' == $this->getFirstname()) {
             return $this->getValue('lastname');
         }
         return $this->getValue('firstname') . ' ' . $this->getValue('lastname');
@@ -137,12 +138,11 @@ class staff extends \rex_yform_manager_dataset
 
     public function getMedia(): ?rex_media
     {
-        if(rex_addon::exists('media_manager_responsive')) {
+        if (rex_addon::exists('media_manager_responsive')) {
             return rex_media_plus::get($this->getValue('image'));
         }
         return rex_media::get($this->getValue('image'));
     }
-
 
     public static function normalizePhone($phone)
     {
