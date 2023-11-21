@@ -132,10 +132,10 @@ class staff extends \rex_yform_manager_dataset
     {
         $phone = preg_replace('~[^\d\+]~', '', $phone);
         if ('00' == substr($phone, 0, 2)) {
-            $phone = '+'. ltrim($phone, '00');
+            $phone = '+' . ltrim($phone, '00');
         }
         if ('0' == substr($phone, 0, 2)) {
-            $phone = '+49'. ltrim($phone, '0');
+            $phone = '+49' . ltrim($phone, '0');
         }
         return $phone;
     }
