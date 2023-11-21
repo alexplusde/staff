@@ -31,38 +31,45 @@ class staff extends \rex_yform_manager_dataset
 
         return $vcard->getOutput();
     }
-
-    public function getName()
+    public function getName(): string
     {
         return $this->getValue('fullname');
     }
 
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->getValue('description');
     }
 
-    public function getContent()
+    public function getContent(): string
     {
         return $this->getValue('content');
     }
 
-    public function getFirstName()
+    public function getFirstName(): string
     {
         return $this->getValue('firstname');
     }
 
-    public function getLastName()
+    public function getLastName(): string
     {
         return $this->getValue('lastname');
     }
 
-    public function getTitle()
+    public function getFullName(): string
+    {
+        if($this->getFirstname() == "") {
+            return $this->getValue('lastname');
+        }
+        return $this->getValue('firstname') . ' ' . $this->getValue('lastname');
+    }
+
+    public function getTitle(): string
     {
         return $this->getValue('title');
     }
 
-    public function getCompany()
+    public function getCompany(): string
     {
         if ('' == $this->getValue('company')) {
             return rex_config::get('staff', 'default_company_name');
@@ -70,63 +77,72 @@ class staff extends \rex_yform_manager_dataset
         return $this->getValue('company');
     }
 
-    public function getMailWork()
+    public function getMailWork(): string
     {
         return $this->getValue('email_work');
     }
 
-    public function getMailHome()
+    public function getMailHome(): string
     {
         return $this->getValue('email_home');
     }
 
-    public function getStreet()
+    public function getStreet(): string
     {
         return $this->getValue('street');
     }
 
-    public function getCity()
+    public function getCity(): string
     {
         return $this->getValue('city');
     }
 
-    public function getZip()
+    public function getZip(): string
     {
         return $this->getValue('zip');
     }
 
-    public function getCountry()
+    public function getCountry(): string
     {
         return $this->getValue('country');
     }
 
-    public function getUrl()
+    public function getUrl(): string
     {
-        return $this->getValue('url');
         if ('' == $this->getValue('company')) {
             return rex_config::get('staff', 'default_company_url');
         }
+        return $this->getValue('url');
     }
 
-    public function getPhoneCell()
+    public function getPhoneCell(): string
     {
         return self::normalizePhone($this->getValue('phone'));
     }
 
-    public function getPhoneWork()
+    public function getPhoneWork(): string
     {
         return self::normalizePhone($this->getValue('phone_work'));
     }
 
-    public function getPhoneHome()
+    public function getPhoneHome(): string
     {
         return self::normalizePhone($this->getValue('phone_home'));
     }
 
-    public function getImage()
+    public function getImage(): string
     {
         return $this->getValue('image');
     }
+
+    public function getMedia(): ?rex_media
+    {
+        if(rex_addon::exists('media_manager_responsive')) {
+            return rex_media_plus::get($this->getValue('image'));
+        }
+        return rex_media::get($this->getValue('image'));
+    }
+
 
     public static function normalizePhone($phone)
     {
