@@ -28,7 +28,7 @@ $fragment->setVar('body', $form->get(), false);
 	<div class="col-lg-4">
 		<?php
 
-$anchor = '<a target="_blank" href="https://donate.alexplus.de/?addon=staff"><img src="'.rex_url::addonAssets('staff', 'unterstuetzen.svg').'" style="width: 100% max-width: 400px;"></a>';
+$anchor = '<a target="_blank" href="https://donate.alexplus.de/?addon=staff"><img src="' . rex_url::addonAssets('staff', 'unterstuetzen.svg') . '" style="width: 100% max-width: 400px;"></a>';
 
 $fragment = new rex_fragment();
 $fragment->setVar('class', 'info', false);
