@@ -17,7 +17,7 @@ page:
     perm: staff[]
     main: true
     block: system
-    prio: 15
+    prio: 19
 
 pages:
     person: 
