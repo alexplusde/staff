@@ -33,16 +33,3 @@ Weitere Informationen beim Vendor <https://github.com/chillerlan/php-qrcode>
 ### Weitere YOrm-Methoden
 
 Alle weiteren Dataset-Methoden leiten sich von YOrm in YForm ab.
-
-## Lizenz
-
-MIT Lizenz, siehe [LICENSE.md](https://github.com/alexplusde/staff/blob/master/LICENSE.md)  
-
-## Autoren
-
-**Alexander Walther**  
-<http://www.alexplus.de>  
-<https://github.com/alexplusde>  
-
-**Projekt-Lead**  
-[Alexander Walther](https://github.com/alexplusde)

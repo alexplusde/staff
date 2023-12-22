@@ -1,5 +1,5 @@
 package: staff 
-version: '1.3.1'
+version: '1.4.0'
 author: 'Alexander Walther' 
 supportpage: https://github.com/alexplusde/staff 
 
@@ -20,18 +20,14 @@ page:
     prio: 15
 
 pages:
-    edit: 
+    person: 
         title: translate:staff_title
         icon: rex-icon fa-user
         perm: staff[]
-        itemattr:
-            table_name: rex_staff
-    edit-category: 
+    category: 
         title: translate:staff_category_title
         icon: rex-icon fa-folder
         perm: staff[]
-        itemattr:
-            table_name: rex_staff_category
     settings:
         title: translate:staff_settings
         icon: rex-icon fa-gear
@@ -39,7 +35,6 @@ pages:
         perm: admin
     docs:
         title: translate:staff_docs
-        subPath: README.md 
         icon: rex-icon fa-info-circle
         itemclass: pull-right
         perm: staff[docs]
