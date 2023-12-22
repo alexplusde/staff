@@ -2,8 +2,12 @@
 
 $addon = rex_addon::get('staff');
 
+echo rex_view::title($addon->getProperty('page')['title']);
+
+/* Konfigurationsformular zum Einstellen des Mitarbeiter-Addons */
 $form = rex_config_form::factory($addon->getName());
 
+/* Textfeld WYSIWYG-Editor kongufgieren */
 $field = $form->addInputField('text', 'editor', null, ['class' => 'form-control']);
 $field->setLabel(rex_i18n::msg('staff_editor'));
 $field->setNotice('z.B. <code>class="form-control cke5-editor" data-lang="de" data-profile="default"</code>');
