@@ -298,6 +298,13 @@ class staff extends \rex_yform_manager_dataset
         return rex_media::get($this->getValue('image'));
     }
 
+    public function getMediaUrl() : ?string
+    {
+        if($media = $this->getMedia()) {
+            return $media->getUrl();
+        }
+    }
+
     /**
      * Normalisiert die Telefonnummer.
      *
