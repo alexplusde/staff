@@ -18,3 +18,21 @@ if (rex::isBackend() && 'staff/edit' == rex_be_controller::getCurrentPage() || '
         $ep->setSubject(str_replace($suchmuster, $ersetzen, $ep->getSubject()));
     });
 }
+
+
+if(rex::isBackend()) {
+    $addon = rex_addon::get('staff');
+    $page = $addon->getProperty('page');
+    
+    $_csrf_key = rex_yform_manager_table::get('rex_staff')->getCSRFKey();
+    $token = rex_csrf_token::factory($_csrf_key)->getUrlParams();
+
+    $params = array();
+    $params['table_name'] = 'rex_staff'; // Tabellenname anpassen
+    $params['rex_yform_manager_popup'] = '0';
+    $params['_csrf_token'] = $token['_csrf_token'];
+    $params['func'] = 'add';
+
+    $page['title'] .= ' <a style="position: absolute; top: 0; right: 0; padding: 5px; margin: 8px 19px 8px 8px" href="'.rex_url::backendPage('staff/person', $params) .'" class="label label-default pull-right">+</a>';
+    $addon->setProperty('page', $page);
+}
