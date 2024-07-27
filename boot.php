@@ -19,14 +19,13 @@ if (rex::isBackend() && 'staff/edit' == rex_be_controller::getCurrentPage() || '
     });
 }
 
-
-if (rex::isBackend() && \rex_addon::get('staff') && \rex_addon::get('staff')->isAvailable() && !rex::isSafeMode()) {
+if (rex::isBackend() && rex_addon::get('staff') && rex_addon::get('staff')->isAvailable() && !rex::isSafeMode()) {
     $addon = rex_addon::get('staff');
     $page = $addon->getProperty('page');
 
-    if(!rex::getConsole()) {
+    if (!rex::getConsole()) {
         $_csrf_key = rex_yform_manager_table::get('rex_staff')->getCSRFKey();
-        
+
         $token = rex_csrf_token::factory($_csrf_key)->getUrlParams();
 
         $params = [];
