@@ -34,7 +34,7 @@ if (rex::isBackend() && rex_addon::get('staff') && rex_addon::get('staff')->isAv
         $params['_csrf_token'] = $token['_csrf_token'];
         $params['func'] = 'add';
 
-        $href = rex_url::backendPage('staff/entry', $params);
+        $href = rex_url::backendPage('staff/person', $params);
 
         $page['title'] .= ' <a class="label label-primary tex-primary" style="position: absolute; right: 18px; top: 10px; padding: 0.2em 0.6em 0.3em; border-radius: 3px; color: white; display: inline; width: auto;" href="' . $href . '">+</a>';
         $addon->setProperty('page', $page);
