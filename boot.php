@@ -19,19 +19,25 @@ if (rex::isBackend() && 'staff/edit' == rex_be_controller::getCurrentPage() || '
     });
 }
 
-if (rex::isBackend()) {
+
+if (rex::isBackend() && \rex_addon::get('staff') && \rex_addon::get('staff')->isAvailable() && !rex::isSafeMode()) {
     $addon = rex_addon::get('staff');
     $page = $addon->getProperty('page');
 
-    $_csrf_key = rex_yform_manager_table::get('rex_staff')->getCSRFKey();
-    $token = rex_csrf_token::factory($_csrf_key)->getUrlParams();
+    if(!rex::getConsole()) {
+        $_csrf_key = rex_yform_manager_table::get('rex_staff')->getCSRFKey();
+        
+        $token = rex_csrf_token::factory($_csrf_key)->getUrlParams();
 
-    $params = [];
-    $params['table_name'] = 'rex_staff'; // Tabellenname anpassen
-    $params['rex_yform_manager_popup'] = '0';
-    $params['_csrf_token'] = $token['_csrf_token'];
-    $params['func'] = 'add';
+        $params = [];
+        $params['table_name'] = 'rex_staff'; // Tabellenname anpassen
+        $params['rex_yform_manager_popup'] = '0';
+        $params['_csrf_token'] = $token['_csrf_token'];
+        $params['func'] = 'add';
 
-    $page['title'] .= ' <a style="position: absolute; top: 0; right: 0; padding: 5px; margin: 8px 19px 8px 8px" href="' . rex_url::backendPage('staff/person', $params) . '" class="label label-default pull-right">+</a>';
-    $addon->setProperty('page', $page);
+        $href = rex_url::backendPage('staff/entry', $params);
+
+        $page['title'] .= ' <a class="label label-primary tex-primary" style="position: absolute; right: 18px; top: 10px; padding: 0.2em 0.6em 0.3em; border-radius: 3px; color: white; display: inline; width: auto;" href="' . $href . '">+</a>';
+        $addon->setProperty('page', $page);
+    }
 }
