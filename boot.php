@@ -11,7 +11,7 @@ if (rex_addon::get('yform')->isAvailable() && !rex::isSafeMode()) {
     );
 }
 
-if (rex::isBackend() && 'staff/edit' == rex_be_controller::getCurrentPage() || 'yform/manager/data_edit' == rex_be_controller::getCurrentPage()) {
+if (rex::isBackend() && 'staff/person' == rex_be_controller::getCurrentPage() || 'yform/manager/data_edit' == rex_be_controller::getCurrentPage()) {
     rex_extension::register('OUTPUT_FILTER', static function (rex_extension_point $ep) {
         $suchmuster = 'class="###staff-settings-editor###"';
         $ersetzen = rex_config::get('staff', 'editor');
