@@ -5,12 +5,12 @@
  * Diese Klasse erweitert rex_yform_manager_dataset und stellt Methoden zur Verfügung,
  * um auf die Daten einer bestimmten Mitarbeiterkategorie zuzugreifen.
  */
-class staff_category extends \rex_yform_manager_dataset
+class staff_category extends rex_yform_manager_dataset
 {
     /**
      * Gibt den Namen der Mitarbeiterkategorie zurück.
      *
-     * @return string Der Name der Mitarbeiterkategorie.
+     * @return string der Name der Mitarbeiterkategorie
      *
      * @example
      * $category = new staff_category();
@@ -20,7 +20,7 @@ class staff_category extends \rex_yform_manager_dataset
     {
         return $this->getValue('name');
     }
-    
+
     public function setName($name): self
     {
         $this->setValue('name', $name);
@@ -30,7 +30,7 @@ class staff_category extends \rex_yform_manager_dataset
     /**
      * Gibt alle Mitglieder der Mitarbeiterkategorie zurück.
      *
-     * @return rex_yform_manager_collection|null Eine Sammlung von Mitarbeitern, die zur Kategorie gehören, oder null, wenn keine gefunden wurden.
+     * @return rex_yform_manager_collection|null eine Sammlung von Mitarbeitern, die zur Kategorie gehören, oder null, wenn keine gefunden wurden
      *
      * @example
      * $category = new staff_category();

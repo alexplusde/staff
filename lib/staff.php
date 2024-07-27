@@ -13,11 +13,9 @@ use JeroenDesloovere\VCard\VCard;
  * $mitarbeiter->setValue('job', 'Entwickler');
  * $mitarbeiter->save();
  * ```
- *
  */
-class staff extends \rex_yform_manager_dataset
+class staff extends rex_yform_manager_dataset
 {
-
     public static function getQRCode($staff, $options = null)
     {
         $qrcode = new QRCode($options);
@@ -48,7 +46,7 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Gibt den vollständigen Namen des Mitarbeiters zurück.
      *
-     * @return string Der vollständige Name des Mitarbeiters.
+     * @return string der vollständige Name des Mitarbeiters
      */
     public function getName(): string
     {
@@ -58,7 +56,7 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Gibt die Beschreibung des Mitarbeiters zurück.
      *
-     * @return string Die Beschreibung des Mitarbeiters.
+     * @return string die Beschreibung des Mitarbeiters
      */
     public function getDescription(): string
     {
@@ -68,16 +66,17 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Gibt den Inhalt des Mitarbeiters zurück.
      *
-     * @return string Der Inhalt des Mitarbeiters.
+     * @return string der Inhalt des Mitarbeiters
      */
     public function getContent(): string
     {
         return $this->getValue('content');
     }
+
     /**
      * Gibt den Vornamen des Mitarbeiters zurück.
      *
-     * @return string Der Vorname des Mitarbeiters.
+     * @return string der Vorname des Mitarbeiters
      */
     public function getFirstName(): string
     {
@@ -87,7 +86,7 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Gibt den Nachnamen des Mitarbeiters zurück.
      *
-     * @return string Der Nachname des Mitarbeiters.
+     * @return string der Nachname des Mitarbeiters
      */
     public function getLastName(): string
     {
@@ -98,7 +97,7 @@ class staff extends \rex_yform_manager_dataset
      * Gibt den vollständigen Namen des Mitarbeiters zurück.
      * Wenn kein Vorname vorhanden ist, wird nur der Nachname zurückgegeben.
      *
-     * @return string Der vollständige Name des Mitarbeiters.
+     * @return string der vollständige Name des Mitarbeiters
      */
     public function getFullName(): string
     {
@@ -107,10 +106,11 @@ class staff extends \rex_yform_manager_dataset
         }
         return $this->getValue('firstname') . ' ' . $this->getValue('lastname');
     }
+
     /**
      * Gibt den Titel des Mitarbeiters zurück.
      *
-     * @return string Der Titel des Mitarbeiters.
+     * @return string der Titel des Mitarbeiters
      */
     public function getTitle(): string
     {
@@ -121,7 +121,7 @@ class staff extends \rex_yform_manager_dataset
      * Gibt den Namen des Unternehmens des Mitarbeiters zurück.
      * Wenn kein Unternehmensname vorhanden ist, wird der Standardunternehmensname aus der Konfiguration zurückgegeben.
      *
-     * @return string Der Name des Unternehmens des Mitarbeiters.
+     * @return string der Name des Unternehmens des Mitarbeiters
      */
     public function getCompany(): string
     {
@@ -134,12 +134,13 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Gibt die berufliche E-Mail-Adresse des Mitarbeiters zurück.
      *
-     * @return string Die berufliche E-Mail-Adresse des Mitarbeiters.
+     * @return string die berufliche E-Mail-Adresse des Mitarbeiters
      */
     public function getMailWork(): string
     {
         return $this->getValue('email_work');
     }
+
     public function getMailHome(): string
     {
         return $this->getValue('email_home');
@@ -148,7 +149,7 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Gibt die Straße der Adresse des Mitarbeiters zurück.
      *
-     * @return string Die Straße der Adresse des Mitarbeiters.
+     * @return string die Straße der Adresse des Mitarbeiters
      */
     public function getStreet(): string
     {
@@ -158,7 +159,7 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Setzt die Straße der Adresse des Mitarbeiters.
      *
-     * @param string $street Die neue Straße der Adresse des Mitarbeiters.
+     * @param string $street die neue Straße der Adresse des Mitarbeiters
      */
     public function setStreet(string $street): self
     {
@@ -169,7 +170,7 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Gibt die Stadt der Adresse des Mitarbeiters zurück.
      *
-     * @return string Die Stadt der Adresse des Mitarbeiters.
+     * @return string die Stadt der Adresse des Mitarbeiters
      */
     public function getCity(): string
     {
@@ -179,7 +180,7 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Setzt die Stadt der Adresse des Mitarbeiters.
      *
-     * @param string $city Die neue Stadt der Adresse des Mitarbeiters.
+     * @param string $city die neue Stadt der Adresse des Mitarbeiters
      * @return $this
      */
     public function setCity(string $city): self
@@ -191,7 +192,7 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Gibt die Postleitzahl der Adresse des Mitarbeiters zurück.
      *
-     * @return string Die Postleitzahl der Adresse des Mitarbeiters.
+     * @return string die Postleitzahl der Adresse des Mitarbeiters
      */
     public function getZip(): string
     {
@@ -201,7 +202,7 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Setzt die Postleitzahl der Adresse des Mitarbeiters.
      *
-     * @param string $zip Die neue Postleitzahl der Adresse des Mitarbeiters.
+     * @param string $zip die neue Postleitzahl der Adresse des Mitarbeiters
      * @return $this
      */
     public function setZip(string $zip): self
@@ -213,7 +214,7 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Gibt das Land der Adresse des Mitarbeiters zurück.
      *
-     * @return string Das Land der Adresse des Mitarbeiters.
+     * @return string das Land der Adresse des Mitarbeiters
      */
     public function getCountry(): string
     {
@@ -223,7 +224,7 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Setzt das Land der Adresse des Mitarbeiters.
      *
-     * @param string $country Das neue Land der Adresse des Mitarbeiters.
+     * @param string $country das neue Land der Adresse des Mitarbeiters
      * @return $this
      */
     public function setCountry(string $country): self
@@ -236,7 +237,7 @@ class staff extends \rex_yform_manager_dataset
      * Gibt die URL des Unternehmens des Mitarbeiters zurück.
      * Wenn keine Unternehmens-URL vorhanden ist, wird die Standard-Unternehmens-URL aus der Konfiguration zurückgegeben.
      *
-     * @return string Die URL des Unternehmens des Mitarbeiters.
+     * @return string die URL des Unternehmens des Mitarbeiters
      */
     public function getUrl(): string
     {
@@ -245,10 +246,11 @@ class staff extends \rex_yform_manager_dataset
         }
         return $this->getValue('url');
     }
+
     /**
      * Gibt die Handynummer des Mitarbeiters zurück.
      *
-     * @return string Die normalisierte Handynummer des Mitarbeiters.
+     * @return string die normalisierte Handynummer des Mitarbeiters
      */
     public function getPhoneCell(): string
     {
@@ -258,7 +260,7 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Gibt die Arbeitsnummer des Mitarbeiters zurück.
      *
-     * @return string Die normalisierte Arbeitsnummer des Mitarbeiters.
+     * @return string die normalisierte Arbeitsnummer des Mitarbeiters
      */
     public function getPhoneWork(): string
     {
@@ -268,7 +270,7 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Gibt die Heimnummer des Mitarbeiters zurück.
      *
-     * @return string Die normalisierte Heimnummer des Mitarbeiters.
+     * @return string die normalisierte Heimnummer des Mitarbeiters
      */
     public function getPhoneHome(): string
     {
@@ -278,7 +280,7 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Gibt das Bild des Mitarbeiters zurück.
      *
-     * @return string Der Pfad zum Bild des Mitarbeiters.
+     * @return string der Pfad zum Bild des Mitarbeiters
      */
     public function getImage(): string
     {
@@ -288,7 +290,7 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Gibt das Medium des Mitarbeiters zurück.
      *
-     * @return rex_media|null Das Medium des Mitarbeiters oder null, wenn es nicht existiert.
+     * @return rex_media|null das Medium des Mitarbeiters oder null, wenn es nicht existiert
      */
     public function getMedia(): ?rex_media
     {
@@ -298,9 +300,9 @@ class staff extends \rex_yform_manager_dataset
         return rex_media::get($this->getValue('image'));
     }
 
-    public function getMediaUrl() : ?string
+    public function getMediaUrl(): ?string
     {
-        if($media = $this->getMedia()) {
+        if ($media = $this->getMedia()) {
             return $media->getUrl();
         }
     }
@@ -308,8 +310,8 @@ class staff extends \rex_yform_manager_dataset
     /**
      * Normalisiert die Telefonnummer.
      *
-     * @param string $phone Die zu normalisierende Telefonnummer.
-     * @return string Die normalisierte Telefonnummer.
+     * @param string $phone die zu normalisierende Telefonnummer
+     * @return string die normalisierte Telefonnummer
      */
     public static function normalizePhone($phone)
     {
@@ -324,116 +326,116 @@ class staff extends \rex_yform_manager_dataset
     }
 
     /** @api */
-    public function setFullname(mixed $value) : self
+    public function setFullname(mixed $value): self
     {
-        $this->setValue("fullname", $value);
+        $this->setValue('fullname', $value);
         return $this;
     }
 
     /** @api */
-    public function setStatus(mixed $value) : self
+    public function setStatus(mixed $value): self
     {
-        $this->setValue("status", $value);
+        $this->setValue('status', $value);
         return $this;
     }
 
     /** @api */
-    public function setPrio(int $value) : self
+    public function setPrio(int $value): self
     {
-        $this->setValue("prio", $value);
+        $this->setValue('prio', $value);
         return $this;
     }
 
     /** @api */
-    public function setDescription(mixed $value) : self
+    public function setDescription(mixed $value): self
     {
-        $this->setValue("description", $value);
+        $this->setValue('description', $value);
         return $this;
     }
 
     /** @api */
-    public function setContent(mixed $value) : self
+    public function setContent(mixed $value): self
     {
-        $this->setValue("content", $value);
+        $this->setValue('content', $value);
         return $this;
     }
 
     /** @api */
-    public function setImage(string $filename) : self
+    public function setImage(string $filename): self
     {
-        if(rex_media::get($filename)) {
-            $this->getValue("image", $filename);
+        if (rex_media::get($filename)) {
+            $this->getValue('image', $filename);
         }
         return $this;
     }
 
     /** @api */
-    public function setCreatedate(string $value) : self
+    public function setCreatedate(string $value): self
     {
-        $this->setValue("createdate", $value);
+        $this->setValue('createdate', $value);
         return $this;
     }
 
     /** @api */
-    public function setUpdatedate(string $value) : self
+    public function setUpdatedate(string $value): self
     {
-        $this->setValue("updatedate", $value);
+        $this->setValue('updatedate', $value);
         return $this;
     }
 
     /** @api */
-    public function setCompany(mixed $value) : self
+    public function setCompany(mixed $value): self
     {
-        $this->setValue("company", $value);
+        $this->setValue('company', $value);
         return $this;
     }
 
     /** @api */
-    public function setFirstname(mixed $value) : self
+    public function setFirstname(mixed $value): self
     {
-        $this->setValue("firstname", $value);
+        $this->setValue('firstname', $value);
         return $this;
     }
 
     /** @api */
-    public function setLastname(mixed $value) : self
+    public function setLastname(mixed $value): self
     {
-        $this->setValue("lastname", $value);
+        $this->setValue('lastname', $value);
         return $this;
     }
 
     /** @api */
-    public function setEmailWork(mixed $value) : self
+    public function setEmailWork(mixed $value): self
     {
-        $this->setValue("email_work", $value);
+        $this->setValue('email_work', $value);
         return $this;
     }
 
     /** @api */
-    public function setEmailHome(mixed $value) : self
+    public function setEmailHome(mixed $value): self
     {
-        $this->setValue("email_home", $value);
+        $this->setValue('email_home', $value);
         return $this;
     }
 
     /** @api */
-    public function setPhone(mixed $value) : self
+    public function setPhone(mixed $value): self
     {
-        $this->setValue("phone", $value);
+        $this->setValue('phone', $value);
         return $this;
     }
 
     /** @api */
-    public function setPhoneWork(mixed $value) : self
+    public function setPhoneWork(mixed $value): self
     {
-        $this->setValue("phone_work", $value);
+        $this->setValue('phone_work', $value);
         return $this;
     }
 
     /** @api */
-    public function setPhoneHome(mixed $value) : self
+    public function setPhoneHome(mixed $value): self
     {
-        $this->setValue("phone_home", $value);
+        $this->setValue('phone_home', $value);
         return $this;
     }
 }

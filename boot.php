@@ -18,3 +18,25 @@ if (rex::isBackend() && 'staff/edit' == rex_be_controller::getCurrentPage() || '
         $ep->setSubject(str_replace($suchmuster, $ersetzen, $ep->getSubject()));
     });
 }
+
+if (rex::isBackend() && rex_addon::get('staff') && rex_addon::get('staff')->isAvailable() && !rex::isSafeMode()) {
+    $addon = rex_addon::get('staff');
+    $page = $addon->getProperty('page');
+
+    if (!rex::getConsole()) {
+        $_csrf_key = rex_yform_manager_table::get('rex_staff')->getCSRFKey();
+
+        $token = rex_csrf_token::factory($_csrf_key)->getUrlParams();
+
+        $params = [];
+        $params['table_name'] = 'rex_staff'; // Tabellenname anpassen
+        $params['rex_yform_manager_popup'] = '0';
+        $params['_csrf_token'] = $token['_csrf_token'];
+        $params['func'] = 'add';
+
+        $href = rex_url::backendPage('staff/entry', $params);
+
+        $page['title'] .= ' <a class="label label-primary tex-primary" style="position: absolute; right: 18px; top: 10px; padding: 0.2em 0.6em 0.3em; border-radius: 3px; color: white; display: inline; width: auto;" href="' . $href . '">+</a>';
+        $addon->setProperty('page', $page);
+    }
+}
