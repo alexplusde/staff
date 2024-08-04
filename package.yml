@@ -31,12 +31,12 @@ pages:
     settings:
         title: translate:staff_settings
         icon: rex-icon fa-gear
-        itemclass: pull-right
+        itemClass: pull-right
         perm: admin
     docs:
         title: translate:staff_docs
         icon: rex-icon fa-info-circle
-        itemclass: pull-right
+        itemClass: pull-right
         perm: staff[docs]
 
 default_config:
