@@ -23,7 +23,7 @@ if (rex::isBackend() && rex_addon::get('staff') && rex_addon::get('staff')->isAv
     $addon = rex_addon::get('staff');
     $page = $addon->getProperty('page');
 
-    if (!rex::getConsole()) {
+    if (rex::isBackend() && !empty($_REQUEST)) {
         $_csrf_key = rex_yform_manager_table::get('rex_staff')->getCSRFKey();
 
         $token = rex_csrf_token::factory($_csrf_key)->getUrlParams();
