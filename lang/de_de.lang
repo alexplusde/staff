@@ -1,5 +1,9 @@
 staff_title = Mitarbeitende
 
+
+staff_table = 🪼 Mitarbeitende
+staff_category_table = 🪼 Kategorien
+
 staff_table_fieldset_about = Über die Person
 staff_table_fieldset_vcard = Visitenkarte
 
