@@ -1,3 +1,3 @@
 <?php
 
-include __FILE__ . '/install.php';
+include __DIR__ . '/install.php';
